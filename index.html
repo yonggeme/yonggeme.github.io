@@ -313,15 +313,75 @@
       
         
           
-            <ul>
+            <blockquote>
+<p>Maven用了很久了，命令一直记不住，其实想想就那个几个常用的，今天写下来，帮着记忆吧</p>
+</blockquote>
+<ul>
 <li><p>创建一个简单的Java工程：</p>
 <pre><code>mvn archetype:create -DgroupId=com.mycompany.example -DartifactId=Example
 </code></pre></li>
 <li><p>创建一个Java的Web工程：</p>
-<pre><code>mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifact
-Id=maven-archetype-webapp -DgroupId=com.mycompany.app -DartifactId=my-webapp
+<pre><code>mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.mycompany.app -DartifactId=my-webapp
+</code></pre></li>
+<li><p>打包</p>
+<pre><code>mvn package
+</code></pre></li>
+<li><p>编译</p>
+<pre><code>mvn compile
+</code></pre></li>
+<li><p>编译测试程序：</p>
+<pre><code>mvn test-compile
+</code></pre></li>
+<li><p>清空：</p>
+<pre><code>mvn clean
+</code></pre></li>
+<li><p>运行测试：</p>
+<pre><code>mvn test
+</code></pre></li>
+<li><p>生成站点目录: </p>
+<pre><code>mvn site 
+</code></pre></li>
+<li><p>生成站点目录并发布：</p>
+<pre><code>mvn site-deploy
+</code></pre></li>
+<li><p>安装当前工程的输出文件到本地仓库: </p>
+<pre><code>mvn install
+</code></pre></li>
+<li><p>安装指定文件到本地仓库：</p>
+<pre><code>mvn install:install-file -DgroupId=&lt;groupId&gt; -DartifactId=&lt;artifactId&gt; -Dversion=1.0.0 -Dpackaging=jar -Dfile=&lt;myfile.jar&gt;
+</code></pre></li>
+<li><p>查看实际pom信息: </p>
+<pre><code>mvn help:effective-pom
+</code></pre></li>
+<li><p>分析项目的依赖信息：</p>
+<pre><code>mvn dependency:analyze 或 mvn dependency:tree
+</code></pre></li>
+<li><p>跳过测试运行maven任务：    </p>
+<pre><code>mvn -Dmaven.test.skip=true XXX
+</code></pre></li>
+<li><p>生成eclipse或idea项目文件: </p>
+<pre><code>mvn eclipse:eclipse
+mvn idea:idea
+</code></pre></li>
+<li><p>查看帮助信息：</p>
+<pre><code>mvn help:help 
 </code></pre></li>
 </ul>
+<p>或 </p>
+<pre><code>mvn help:help -Ddetail=true
+</code></pre><ul>
+<li><p>查看插件的帮助信息：</p>
+<pre><code>mvn &lt;plug-in&gt;:help，
+</code></pre><p>  比如：</p>
+<pre><code>mvn dependency:help 
+</code></pre><p>  或 </p>
+<pre><code>mvn ant:help 
+</code></pre><p>  等等。</p>
+</li>
+</ul>
+<blockquote>
+<p>转载自<a href="http://blog.csdn.net/kongxx/article/details/6993501" target="_blank" rel="external">http://blog.csdn.net/kongxx/article/details/6993501</a></p>
+</blockquote>
 
           
         
