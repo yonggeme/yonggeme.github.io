@@ -67,7 +67,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="maven," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -83,37 +83,61 @@
 
 
 
-<meta name="description" content="Maven用了很久了，命令一直记不住，其实想想就那个几个常用的，今天写下来，帮着记忆吧
+<meta name="description" content="####查看、添加、提交、删除、找回，重置修改文件
 
+显示command的help
+git help &amp;lt;command&amp;gt;
 
-创建一个简单的Java工程：
-mvn archetype:create -DgroupId=com.mycompany.example -DartifactId=Example
+显示某次提交的内容
+git show
 
-创建一个Java的Web工程：
-mvn archetype:create -DarchetypeGroupId=org.apa">
+抛弃工作区修改
+git co -- &amp;lt;file&amp;gt; ／／指定文件
+  or
+git co .   ／／所有文件
+
+将工作文件修改提交到本地暂存区
+git add &amp;lt;file&amp;gt;  ／／指定文件
+  or">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven常用命令">
-<meta property="og:url" content="http://yongge.me/2016/05/03/mavenCommands/index.html">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="http://yongge.me/2016/05/03/gitCommands/index.html">
 <meta property="og:site_name" content="IDEAS">
-<meta property="og:description" content="Maven用了很久了，命令一直记不住，其实想想就那个几个常用的，今天写下来，帮着记忆吧
+<meta property="og:description" content="####查看、添加、提交、删除、找回，重置修改文件
 
+显示command的help
+git help &amp;lt;command&amp;gt;
 
-创建一个简单的Java工程：
-mvn archetype:create -DgroupId=com.mycompany.example -DartifactId=Example
+显示某次提交的内容
+git show
 
-创建一个Java的Web工程：
-mvn archetype:create -DarchetypeGroupId=org.apa">
-<meta property="og:updated_time" content="2016-05-03T12:03:43.649Z">
+抛弃工作区修改
+git co -- &amp;lt;file&amp;gt; ／／指定文件
+  or
+git co .   ／／所有文件
+
+将工作文件修改提交到本地暂存区
+git add &amp;lt;file&amp;gt;  ／／指定文件
+  or">
+<meta property="og:updated_time" content="2016-05-04T13:01:04.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven常用命令">
-<meta name="twitter:description" content="Maven用了很久了，命令一直记不住，其实想想就那个几个常用的，今天写下来，帮着记忆吧
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="####查看、添加、提交、删除、找回，重置修改文件
 
+显示command的help
+git help &amp;lt;command&amp;gt;
 
-创建一个简单的Java工程：
-mvn archetype:create -DgroupId=com.mycompany.example -DartifactId=Example
+显示某次提交的内容
+git show
 
-创建一个Java的Web工程：
-mvn archetype:create -DarchetypeGroupId=org.apa">
+抛弃工作区修改
+git co -- &amp;lt;file&amp;gt; ／／指定文件
+  or
+git co .   ／／所有文件
+
+将工作文件修改提交到本地暂存区
+git add &amp;lt;file&amp;gt;  ／／指定文件
+  or">
 
 
 
@@ -131,7 +155,7 @@ mvn archetype:create -DarchetypeGroupId=org.apa">
   };
 </script>
 
-  <title> maven常用命令 | IDEAS </title>
+  <title> git常用命令 | IDEAS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +305,7 @@ mvn archetype:create -DarchetypeGroupId=org.apa">
             
             
               
-                maven常用命令
+                git常用命令
               
             
           </h1>
@@ -293,7 +317,7 @@ mvn archetype:create -DarchetypeGroupId=org.apa">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T17:57:34+08:00" content="2016-05-03">
+            <time itemprop="dateCreated" datetime="2016-05-03T20:06:04+08:00" content="2016-05-03">
               2016-05-03
             </time>
           </span>
@@ -304,8 +328,8 @@ mvn archetype:create -DarchetypeGroupId=org.apa">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/03/mavenCommands/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/03/mavenCommands/" itemprop="commentsCount"></span>
+                <a href="/2016/05/03/gitCommands/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/03/gitCommands/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -328,75 +352,147 @@ mvn archetype:create -DarchetypeGroupId=org.apa">
       
 
       
-        <blockquote>
-<p>Maven用了很久了，命令一直记不住，其实想想就那个几个常用的，今天写下来，帮着记忆吧</p>
-</blockquote>
+        <p>####查看、添加、提交、删除、找回，重置修改文件</p>
 <ul>
-<li><p>创建一个简单的Java工程：</p>
-<pre><code>mvn archetype:create -DgroupId=com.mycompany.example -DartifactId=Example
+<li><p>显示command的help</p>
+<pre><code>git help &lt;command&gt;
 </code></pre></li>
-<li><p>创建一个Java的Web工程：</p>
-<pre><code>mvn archetype:create -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.mycompany.app -DartifactId=my-webapp
+<li><p>显示某次提交的内容</p>
+<pre><code>git show
 </code></pre></li>
-<li><p>打包</p>
-<pre><code>mvn package
+<li><p>抛弃工作区修改</p>
+<pre><code>git co -- &lt;file&gt; ／／指定文件
+</code></pre><p>  or</p>
+<pre><code>git co .   ／／所有文件
 </code></pre></li>
-<li><p>编译</p>
-<pre><code>mvn compile
+<li><p>将工作文件修改提交到本地暂存区</p>
+<pre><code>git add &lt;file&gt;  ／／指定文件
+</code></pre><p>  or</p>
+<pre><code>git add .  //所有文件
 </code></pre></li>
-<li><p>编译测试程序：</p>
-<pre><code>mvn test-compile
+<li><p>从版本库中删除文件</p>
+<pre><code>git rm &lt;file&gt;
 </code></pre></li>
-<li><p>清空：</p>
-<pre><code>mvn clean
+<li><p>从版本库中删除文件，但不删除文件</p>
+<pre><code>git rm &lt;file&gt; --cached
 </code></pre></li>
-<li><p>运行测试：</p>
-<pre><code>mvn test
+<li><p>从暂存区恢复到工作文件</p>
+<pre><code>git reset  &lt;file&gt;  //指定文件
+</code></pre><p>  or</p>
+<pre><code>git reset --.  //所有文件
 </code></pre></li>
-<li><p>生成站点目录: </p>
-<pre><code>mvn site 
+<li><p>恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</p>
+<pre><code>git reset --hard
 </code></pre></li>
-<li><p>生成站点目录并发布：</p>
-<pre><code>mvn site-deploy
+<li><p>将git ci,git rm和git ci等操作都合并在一起做</p>
+<pre><code>git ci -am &apos;some comments&apos;
 </code></pre></li>
-<li><p>安装当前工程的输出文件到本地仓库: </p>
-<pre><code>mvn install
+<li><p>修改最后一次提交纪录</p>
+<pre><code>git ci --amend
 </code></pre></li>
-<li><p>安装指定文件到本地仓库：</p>
-<pre><code>mvn install:install-file -DgroupId=&lt;groupId&gt; -DartifactId=&lt;artifactId&gt; -Dversion=1.0.0 -Dpackaging=jar -Dfile=&lt;myfile.jar&gt;
+<li><p>恢复某次提交的状态，恢复动作本身也创建次提交对象</p>
+<pre><code>git revert &lt;$id&gt;  
 </code></pre></li>
-<li><p>查看实际pom信息: </p>
-<pre><code>mvn help:effective-pom
-</code></pre></li>
-<li><p>分析项目的依赖信息：</p>
-<pre><code>mvn dependency:analyze 或 mvn dependency:tree
-</code></pre></li>
-<li><p>跳过测试运行maven任务：    </p>
-<pre><code>mvn -Dmaven.test.skip=true XXX
-</code></pre></li>
-<li><p>生成eclipse或idea项目文件: </p>
-<pre><code>mvn eclipse:eclipse
-mvn idea:idea
-</code></pre></li>
-<li><p>查看帮助信息：</p>
-<pre><code>mvn help:help 
+<li><p>恢复最后一次提交的状态</p>
+<pre><code>git revert HEAD
 </code></pre></li>
 </ul>
-<p>或 </p>
-<pre><code>mvn help:help -Ddetail=true
+<p>####查看文件diff</p>
+<ul>
+<li><p>比较当前文件和暂存区文件差异 git diff</p>
+<pre><code>git diff &lt;file&gt;
+</code></pre></li>
+<li><p>比较两次提交之间的差异</p>
+<pre><code>git diff &lt;$id1&gt; &lt;$id2&gt;
+</code></pre></li>
+<li><p>在两个分支之间进行比较</p>
+<pre><code>git diff &lt;branch1&gt; &lt;branch2&gt;
+</code></pre></li>
+<li><p>比较暂存区和版本库差异</p>
+<pre><code>git diff --staged
+</code></pre></li>
+</ul>
+<p>或者</p>
+<pre><code>git diff --cached
 </code></pre><ul>
-<li><p>查看插件的帮助信息：</p>
-<pre><code>mvn &lt;plug-in&gt;:help，
-</code></pre><p>  比如：</p>
-<pre><code>mvn dependency:help 
-</code></pre><p>  或 </p>
-<pre><code>mvn ant:help 
-</code></pre><p>  等等。</p>
-</li>
+<li><p>仅仅比较统计信息</p>
+<pre><code>git diff --stat
+</code></pre></li>
 </ul>
-<blockquote>
-<p>转载自<a href="http://blog.csdn.net/kongxx/article/details/6993501" target="_blank" rel="external">http://blog.csdn.net/kongxx/article/details/6993501</a></p>
-</blockquote>
+<p>#####查看提交纪录</p>
+<ul>
+<li><p>查看该文件每次提交记录</p>
+<pre><code>git log git log &lt;file&gt;
+</code></pre></li>
+<li><p>查看每次详细修改内容的diff</p>
+<pre><code>git log -p &lt;file&gt;
+</code></pre></li>
+<li><p>查看最近两次详细修改内容的diff</p>
+<pre><code>git log -p -2
+</code></pre></li>
+<li><p>查看提交统计信息</p>
+<pre><code>git log --stat
+</code></pre></li>
+</ul>
+<p>####tig</p>
+<ul>
+<li><p>Mac上可以使用tig代替diff和log</p>
+<pre><code>brew install tig
+</code></pre></li>
+</ul>
+<p>####Git 本地分支管理</p>
+<ul>
+<li><p>查看远程分支</p>
+<pre><code>git branch -r
+</code></pre></li>
+<li><p>创建新的分支</p>
+<pre><code>git branch &lt;new_branch&gt;
+</code></pre></li>
+<li><p>查看各个分支最后提交信息</p>
+<pre><code>git branch -v
+</code></pre></li>
+<li><p>查看已经被合并到当前分支的分支</p>
+<pre><code>git branch --merged
+</code></pre></li>
+<li><p>查看尚未被合并到当前分支的分支</p>
+<pre><code>git branch --no-merged
+</code></pre></li>
+<li><p>切换到某个分支</p>
+<pre><code>git checkout &lt;branch&gt;
+</code></pre></li>
+<li><p>创建新的分支并切换过去</p>
+<pre><code>git checkout -b &lt;new_branch&gt;
+</code></pre></li>
+<li><p>基于branch创建新的分支并切换过去</p>
+<pre><code>git checkout -b &lt;new_branch&gt; &lt;branch&gt;
+</code></pre></li>
+</ul>
+<ul>
+<li><p>把某次历史提交纪录checkout出来，但无分支信息，切换到其他分支会自动删除</p>
+<pre><code>git checkout &lt;$id&gt;
+</code></pre></li>
+<li><p>把某次历史纪录checkout出来，并创建成一个分支</p>
+<pre><code>git checkout &lt;$id&gt; -b &lt;new_branch&gt;
+</code></pre></li>
+<li><p>删除某个分支</p>
+<pre><code>git branch -d &lt;branch&gt;
+</code></pre></li>
+<li><p>强制删除某个分支（未被合并的分支被删除的时候需要删除）</p>
+<pre><code>git branch -D &lt;branch&gt;
+</code></pre></li>
+</ul>
+<p>####分支合并和rebase</p>
+<ul>
+<li><p>将branch分支合并到当前分支</p>
+<pre><code>git merge &lt;branch&gt;
+</code></pre></li>
+<li><p>不要Fast-Foward合并，这样可以生成merge提交</p>
+<pre><code>git merge origin/master --no-ff
+</code></pre></li>
+<li><p>将master rebase到branch，相当于： git co <branch> &amp;&amp; git rebase master &amp;&amp; git co master &amp;&amp; git merge <branch></branch></branch></p>
+<pre><code>git rebase master &lt;branch&gt;
+</code></pre></li>
+</ul>
 
       
     </div>
@@ -417,7 +513,7 @@ mvn idea:idea
       
         <div class="post-tags">
           
-            <a href="/tags/maven/" rel="tag">#maven</a>
+            <a href="/tags/git/" rel="tag">#git</a>
           
         </div>
       
@@ -426,17 +522,13 @@ mvn idea:idea
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/25/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/05/03/mavenCommands/" rel="next" title="maven常用命令">
+                <i class="fa fa-chevron-left"></i> maven常用命令
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/03/gitCommands/" rel="prev" title="git常用命令">
-                git常用命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -471,8 +563,8 @@ mvn idea:idea
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/03/mavenCommands/"
-           data-title="maven常用命令" data-url="http://yongge.me/2016/05/03/mavenCommands/">
+      <div class="ds-thread" data-thread-key="2016/05/03/gitCommands/"
+           data-title="git常用命令" data-url="http://yongge.me/2016/05/03/gitCommands/">
       </div>
     
   </div>

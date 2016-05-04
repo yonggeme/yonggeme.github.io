@@ -262,6 +262,247 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/03/gitCommands/" itemprop="url">
+                  git常用命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-03T20:06:04+08:00" content="2016-05-03">
+              2016-05-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/03/gitCommands/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/03/gitCommands/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>####查看、添加、提交、删除、找回，重置修改文件</p>
+<ul>
+<li><p>显示command的help</p>
+<pre><code>git help &lt;command&gt;
+</code></pre></li>
+<li><p>显示某次提交的内容</p>
+<pre><code>git show
+</code></pre></li>
+<li><p>抛弃工作区修改</p>
+<pre><code>git co -- &lt;file&gt; ／／指定文件
+</code></pre><p>  or</p>
+<pre><code>git co .   ／／所有文件
+</code></pre></li>
+<li><p>将工作文件修改提交到本地暂存区</p>
+<pre><code>git add &lt;file&gt;  ／／指定文件
+</code></pre><p>  or</p>
+<pre><code>git add .  //所有文件
+</code></pre></li>
+<li><p>从版本库中删除文件</p>
+<pre><code>git rm &lt;file&gt;
+</code></pre></li>
+<li><p>从版本库中删除文件，但不删除文件</p>
+<pre><code>git rm &lt;file&gt; --cached
+</code></pre></li>
+<li><p>从暂存区恢复到工作文件</p>
+<pre><code>git reset  &lt;file&gt;  //指定文件
+</code></pre><p>  or</p>
+<pre><code>git reset --.  //所有文件
+</code></pre></li>
+<li><p>恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</p>
+<pre><code>git reset --hard
+</code></pre></li>
+<li><p>将git ci,git rm和git ci等操作都合并在一起做</p>
+<pre><code>git ci -am &apos;some comments&apos;
+</code></pre></li>
+<li><p>修改最后一次提交纪录</p>
+<pre><code>git ci --amend
+</code></pre></li>
+<li><p>恢复某次提交的状态，恢复动作本身也创建次提交对象</p>
+<pre><code>git revert &lt;$id&gt;  
+</code></pre></li>
+<li><p>恢复最后一次提交的状态</p>
+<pre><code>git revert HEAD
+</code></pre></li>
+</ul>
+<p>####查看文件diff</p>
+<ul>
+<li><p>比较当前文件和暂存区文件差异 git diff</p>
+<pre><code>git diff &lt;file&gt;
+</code></pre></li>
+<li><p>比较两次提交之间的差异</p>
+<pre><code>git diff &lt;$id1&gt; &lt;$id2&gt;
+</code></pre></li>
+<li><p>在两个分支之间进行比较</p>
+<pre><code>git diff &lt;branch1&gt; &lt;branch2&gt;
+</code></pre></li>
+<li><p>比较暂存区和版本库差异</p>
+<pre><code>git diff --staged
+</code></pre></li>
+</ul>
+<p>或者</p>
+<pre><code>git diff --cached
+</code></pre><ul>
+<li><p>仅仅比较统计信息</p>
+<pre><code>git diff --stat
+</code></pre></li>
+</ul>
+<p>#####查看提交纪录</p>
+<ul>
+<li><p>查看该文件每次提交记录</p>
+<pre><code>git log git log &lt;file&gt;
+</code></pre></li>
+<li><p>查看每次详细修改内容的diff</p>
+<pre><code>git log -p &lt;file&gt;
+</code></pre></li>
+<li><p>查看最近两次详细修改内容的diff</p>
+<pre><code>git log -p -2
+</code></pre></li>
+<li><p>查看提交统计信息</p>
+<pre><code>git log --stat
+</code></pre></li>
+</ul>
+<p>####tig</p>
+<ul>
+<li><p>Mac上可以使用tig代替diff和log</p>
+<pre><code>brew install tig
+</code></pre></li>
+</ul>
+<p>####Git 本地分支管理</p>
+<ul>
+<li><p>查看远程分支</p>
+<pre><code>git branch -r
+</code></pre></li>
+<li><p>创建新的分支</p>
+<pre><code>git branch &lt;new_branch&gt;
+</code></pre></li>
+<li><p>查看各个分支最后提交信息</p>
+<pre><code>git branch -v
+</code></pre></li>
+<li><p>查看已经被合并到当前分支的分支</p>
+<pre><code>git branch --merged
+</code></pre></li>
+<li><p>查看尚未被合并到当前分支的分支</p>
+<pre><code>git branch --no-merged
+</code></pre></li>
+<li><p>切换到某个分支</p>
+<pre><code>git checkout &lt;branch&gt;
+</code></pre></li>
+<li><p>创建新的分支并切换过去</p>
+<pre><code>git checkout -b &lt;new_branch&gt;
+</code></pre></li>
+<li><p>基于branch创建新的分支并切换过去</p>
+<pre><code>git checkout -b &lt;new_branch&gt; &lt;branch&gt;
+</code></pre></li>
+</ul>
+<ul>
+<li><p>把某次历史提交纪录checkout出来，但无分支信息，切换到其他分支会自动删除</p>
+<pre><code>git checkout &lt;$id&gt;
+</code></pre></li>
+<li><p>把某次历史纪录checkout出来，并创建成一个分支</p>
+<pre><code>git checkout &lt;$id&gt; -b &lt;new_branch&gt;
+</code></pre></li>
+<li><p>删除某个分支</p>
+<pre><code>git branch -d &lt;branch&gt;
+</code></pre></li>
+<li><p>强制删除某个分支（未被合并的分支被删除的时候需要删除）</p>
+<pre><code>git branch -D &lt;branch&gt;
+</code></pre></li>
+</ul>
+<p>####分支合并和rebase</p>
+<ul>
+<li><p>将branch分支合并到当前分支</p>
+<pre><code>git merge &lt;branch&gt;
+</code></pre></li>
+<li><p>不要Fast-Foward合并，这样可以生成merge提交</p>
+<pre><code>git merge origin/master --no-ff
+</code></pre></li>
+<li><p>将master rebase到branch，相当于： git co <branch> &amp;&amp; git rebase master &amp;&amp; git co master &amp;&amp; git merge <branch></branch></branch></p>
+<pre><code>git rebase master &lt;branch&gt;
+</code></pre></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/03/mavenCommands/" itemprop="url">
                   maven常用命令
                 </a>
@@ -560,7 +801,7 @@ mvn idea:idea
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -570,7 +811,7 @@ mvn idea:idea
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
