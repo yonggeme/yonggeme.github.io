@@ -313,16 +313,11 @@
       
         
           
-            <p>###公司系统背景</p>
-<p>公司属于一家在线少儿英语教育的创业公司，毕竟创业公司，需要在短时间之内做出一个可以使用的系统，因此所以没有过多的系统架构与设计，管理端诞生了。仅仅是前后端分离，前段使用angular js框架，发送rest异步请求访问后台借口获取数据；后台使用的是spring，spring MVC，JPA作为基本的框架，名字叫做appserver，我到公司时已经巨大无比。。。教师端（教师招聘系统以及教师系统）的一部分已经拆分出去，管理端（内部人员使用）和家长端（家长使用，约课，上课）并没有拆分。</p>
-<p>###系统瓶颈</p>
-<p>说到系统瓶颈，就必须先说下公司的业务：在线少儿英语教育，主要面向5-12岁的孩子，纯北美外教，浸入式教学。中国的少儿英语市场还是很大的，而且是在线上课，随时随地，少了接送孩子去培训班的时间。受到了不上家长的青睐，业务不断年增长。当家长成为付费用户后，便可以在家长端进行约课了，但是约课只能在每周的中午12点到12点半约下下周的课。因此在这时候还是会有一点并发量的，在有了一定量的用户后，appserver根本扛不住了，每每约课的时候便会各种502，504和页面点不动现象。家长也是怨声载道，还有学生上课高峰期时管理端慢的一b，内部业务人员各种吐槽，使得研发不得不进行系统优化。</p>
-<p>###系统优化</p>
-<p>去年年底，公司对约课进行了为期一周的紧急优化，加入了redis缓存。但是也只是在约课前打开缓存，约课后关闭缓存。取得了一定的优化效果。</p>
-<p>###独立部署</p>
-<p>随着现在用户的不断增长，原来非正确姿势使用redis缓存的优化也扛不住了，于是乎开始进行管理端独立部署，即在git中新建一个与master相同代码的分支management_server，部署到单独的服务器中，master变成了家长端，management_server变成了管理端，因为家长端与管理端耦合太紧，因此如果有新代码的话需要合并到master和management_server两个分支上，保持一致。</p>
-<p>###读写分离</p>
-<p>再后来对管理段进行了读写分离。</p>
+            <h3 id="公司系统背景"><a href="#公司系统背景" class="headerlink" title="公司系统背景"></a>公司系统背景</h3><p>公司属于一家在线少儿英语教育的创业公司，毕竟创业公司，需要在短时间之内做出一个可以使用的系统，因此所以没有过多的系统架构与设计，管理端诞生了。仅仅是前后端分离，前段使用angular js框架，发送rest异步请求访问后台借口获取数据；后台使用的是spring，spring MVC，JPA作为基本的框架，名字叫做appserver，我到公司时已经巨大无比。。。教师端（教师招聘系统以及教师系统）的一部分已经拆分出去，管理端（内部人员使用）和家长端（家长使用，约课，上课）并没有拆分。</p>
+<h3 id="系统瓶颈"><a href="#系统瓶颈" class="headerlink" title="系统瓶颈"></a>系统瓶颈</h3><p>说到系统瓶颈，就必须先说下公司的业务：在线少儿英语教育，主要面向5-12岁的孩子，纯北美外教，浸入式教学。中国的少儿英语市场还是很大的，而且是在线上课，随时随地，少了接送孩子去培训班的时间。受到了不上家长的青睐，业务不断年增长。当家长成为付费用户后，便可以在家长端进行约课了，但是约课只能在每周的中午12点到12点半约下下周的课。因此在这时候还是会有一点并发量的，在有了一定量的用户后，appserver根本扛不住了，每每约课的时候便会各种502，504和页面点不动现象。家长也是怨声载道，还有学生上课高峰期时管理端慢的一b，内部业务人员各种吐槽，使得研发不得不进行系统优化。</p>
+<h3 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h3><p>去年年底，公司对约课进行了为期一周的紧急优化，加入了redis缓存。但是也只是在约课前打开缓存，约课后关闭缓存。取得了一定的优化效果。</p>
+<h3 id="独立部署"><a href="#独立部署" class="headerlink" title="独立部署"></a>独立部署</h3><p>随着现在用户的不断增长，原来非正确姿势使用redis缓存的优化也扛不住了，于是乎开始进行管理端独立部署，即在git中新建一个与master相同代码的分支management_server，部署到单独的服务器中，master变成了家长端，management_server变成了管理端，因为家长端与管理端耦合太紧，因此如果有新代码的话需要合并到master和management_server两个分支上，保持一致。</p>
+<h3 id="读写分离"><a href="#读写分离" class="headerlink" title="读写分离"></a>读写分离</h3><p>再后来对管理段进行了读写分离。</p>
 
           
         
@@ -423,8 +418,7 @@
       
         
           
-            <p>####查看、添加、提交、删除、找回，重置修改文件</p>
-<ul>
+            <h4 id="查看、添加、提交、删除、找回，重置修改文件"><a href="#查看、添加、提交、删除、找回，重置修改文件" class="headerlink" title="查看、添加、提交、删除、找回，重置修改文件"></a>查看、添加、提交、删除、找回，重置修改文件</h4><ul>
 <li><p>显示command的help</p>
 <pre><code>git help &lt;command&gt;
 </code></pre></li>
@@ -468,8 +462,7 @@
 <pre><code>git revert HEAD
 </code></pre></li>
 </ul>
-<p>####查看文件diff</p>
-<ul>
+<h4 id="查看文件diff"><a href="#查看文件diff" class="headerlink" title="查看文件diff"></a>查看文件diff</h4><ul>
 <li><p>比较当前文件和暂存区文件差异 git diff</p>
 <pre><code>git diff &lt;file&gt;
 </code></pre></li>
@@ -490,8 +483,7 @@
 <pre><code>git diff --stat
 </code></pre></li>
 </ul>
-<p>#####查看提交纪录</p>
-<ul>
+<h5 id="查看提交纪录"><a href="#查看提交纪录" class="headerlink" title="查看提交纪录"></a>查看提交纪录</h5><ul>
 <li><p>查看该文件每次提交记录</p>
 <pre><code>git log git log &lt;file&gt;
 </code></pre></li>
@@ -505,14 +497,12 @@
 <pre><code>git log --stat
 </code></pre></li>
 </ul>
-<p>####tig</p>
-<ul>
+<h4 id="tig"><a href="#tig" class="headerlink" title="tig"></a>tig</h4><ul>
 <li><p>Mac上可以使用tig代替diff和log</p>
 <pre><code>brew install tig
 </code></pre></li>
 </ul>
-<p>####Git 本地分支管理</p>
-<ul>
+<h4 id="Git-本地分支管理"><a href="#Git-本地分支管理" class="headerlink" title="Git 本地分支管理"></a>Git 本地分支管理</h4><ul>
 <li><p>查看远程分支</p>
 <pre><code>git branch -r
 </code></pre></li>
@@ -552,8 +542,7 @@
 <pre><code>git branch -D &lt;branch&gt;
 </code></pre></li>
 </ul>
-<p>####分支合并和rebase</p>
-<ul>
+<h4 id="分支合并和rebase"><a href="#分支合并和rebase" class="headerlink" title="分支合并和rebase"></a>分支合并和rebase</h4><ul>
 <li><p>将branch分支合并到当前分支</p>
 <pre><code>git merge &lt;branch&gt;
 </code></pre></li>
